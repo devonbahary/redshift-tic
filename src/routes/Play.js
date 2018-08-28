@@ -20,7 +20,13 @@ export class Play extends React.Component {
     const { row, column } = this.state;
 
     if (row !== '' && column !== '') {
-      dispatch(move(row, column));
+      // check if move already made
+      if (this.props.game.getIn(['board', row, column])) {
+        alert('Move already made!');
+      } else {
+        dispatch(move(row, column));
+        this.setState(() => ({ row: '', column: '' }));
+      }
 
       // TODO: Determine win or stalemate
     } else {
