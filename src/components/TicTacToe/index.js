@@ -43,6 +43,25 @@ export class TicTacToe extends React.Component {
     return false;
   }
 
+  checkForStalemate() {
+    const rows = this.props.game.get('board').toArray();
+    // count 'null' occurences
+    let nullCount = 0;
+    for (var i = 0; i < rows.length; i++) {
+      const cells = rows[i].toArray();
+      for (var j = 0; j < cells.length; j++) {
+        if (cells[j] === null) {
+          nullCount++;
+          if (nullCount > 1) {
+            return false;
+          }
+        }
+      }
+    }
+
+    return true;
+  }
+
   submitMove(row, column) {
     const { dispatch } = this.props;
 
@@ -60,6 +79,8 @@ export class TicTacToe extends React.Component {
         const players = this.props.game.get('players');
         const playerName = players.get(this.props.game.get('currentPlayerIndex'));
         setTimeout(() => alert(`Player ${playerName} wins!`), 0);
+      } else if (this.checkForStalemate()) {
+        setTimeout(() => alert('Bummer. Neither player won!'), 0);
       }
     } else {
       alert('You need to pick a row and column before you can move!');
