@@ -1,0 +1,18 @@
+.TicTacToe {
+  display: grid;
+  grid-template-rows: repeat(3, 10rem); }
+  .TicTacToe .TicTacToe__row {
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    border-bottom: 1px solid black; }
+    .TicTacToe .TicTacToe__row .TicTacToe__rowCell {
+      border-right: 1px solid black;
+      cursor: pointer; }
+    .TicTacToe .TicTacToe__row .TicTacToe__rowCell:last-of-type {
+      border-right: none; }
+    .TicTacToe .TicTacToe__row .TicTacToe__rowCell.X {
+      background: rgba(255, 0, 0, 0.8); }
+    .TicTacToe .TicTacToe__row .TicTacToe__rowCell.O {
+      background: rgba(0, 0, 255, 0.8); }
+  .TicTacToe .TicTacToe__row:last-of-type {
+    border-bottom: none; }

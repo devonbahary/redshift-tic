@@ -1,0 +1,31 @@
+.TicTacToe {
+  display: grid;
+  grid-template-rows: repeat(3, 10rem);
+
+  .TicTacToe__row {
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    border-bottom: 1px solid black;
+
+    .TicTacToe__rowCell {
+      border-right: 1px solid black;
+      cursor: pointer;
+    }
+
+    .TicTacToe__rowCell:last-of-type {
+      border-right: none;
+    }
+
+    .TicTacToe__rowCell.X {
+      background: rgba(red, 0.8);
+    }
+
+    .TicTacToe__rowCell.O {
+      background: rgba(blue, 0.8);
+    }
+  }
+
+  .TicTacToe__row:last-of-type {
+    border-bottom: none;
+  }
+}
