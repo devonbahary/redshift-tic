@@ -91,7 +91,7 @@ export class TicTacToe extends React.Component {
     const rows = this.props.game.get('board').toArray();
 
     return (
-      <div className="TicTacToe">
+      <div className="TicTacToe mt2 mb2">
         {rows.map((row, rowIndex) => (
           <div className="TicTacToe__row" key={rowIndex}>
             {row.toArray().map((rowCell, columnIndex) => {

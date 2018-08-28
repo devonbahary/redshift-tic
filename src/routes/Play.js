@@ -1,24 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { map } from 'react-immutable-proptypes';
 import { func } from 'prop-types';
 
-import { move } from '../redux/actions';
+import { resetGame } from '../redux/actions';
 import CoreLayout from '../containers/CoreLayout';
 import TicTacToe from '../components/TicTacToe';
 
 export const Play = (props) => {
+  const { dispatch } = props;
   const { game } = props;
   const players = game.get('players');
 
   return (
     <CoreLayout>
-      <div>
+      <div className="col--center typ--center">
         <h2>{ players.get(0) } vs. { players.get(1) }</h2>
         <p>{ `${players.get(game.get('currentPlayerIndex'))}'s turn` }</p>
 
         <TicTacToe />
 
+        <Link to="/" className="btn" onClick={ () => dispatch(resetGame()) }>Start a new game</Link>
       </div>
     </CoreLayout>
   );

@@ -12,8 +12,6 @@ const Header = (props) => {
   return (
     <header className="header">
       <Link to="/"><img src={ require('assets/logo.svg') } alt="Tic Tac Toe" /></Link>
-
-      <Link to="/" className="btn" onClick={ () => dispatch(resetGame()) }>Start a new game</Link>
     </header>
   )
 }

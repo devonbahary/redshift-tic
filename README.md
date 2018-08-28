@@ -76,7 +76,7 @@ There are at least two bugs on the Play page.
 
 Our board component is unstyled, and looks pretty awful right now.
 
-- [ ] Make it look nice. We've added some styles to the Welcome page, and you could use them as a guide.
+- [x] Make it look nice. We've added some styles to the Welcome page, and you could use them as a guide.
 
 #### Styling game alerts
 
