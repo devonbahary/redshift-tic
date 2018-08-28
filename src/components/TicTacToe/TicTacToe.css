@@ -6,8 +6,7 @@
     grid-template-columns: repeat(3, 10rem);
     border-bottom: 1px solid black; }
     .TicTacToe .TicTacToe__row .TicTacToe__rowCell {
-      border-right: 1px solid black;
-      cursor: pointer; }
+      border-right: 1px solid black; }
     .TicTacToe .TicTacToe__row .TicTacToe__rowCell:last-of-type {
       border-right: none; }
     .TicTacToe .TicTacToe__row .TicTacToe__rowCell.X {

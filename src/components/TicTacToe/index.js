@@ -95,7 +95,7 @@ export class TicTacToe extends React.Component {
         {rows.map((row, rowIndex) => (
           <div className="TicTacToe__row" key={rowIndex}>
             {row.toArray().map((rowCell, columnIndex) => {
-              const className = "TicTacToe__rowCell" + (rowCell ? ` ${rowCell}` : '');
+              const className = "TicTacToe__rowCell typ--actionable" + (rowCell ? ` ${rowCell}` : '');
               return (
                 <div
                   className={className}

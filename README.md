@@ -112,7 +112,7 @@ Tic-tac-toe is cool on its own, but we think it'd be even cooler if we could use
 
 Honestly, our Play UI sucks.
 
-- [ ] Improve it, however you see fit. (Some options: keyboard input, move on click, etc).
+- [x] Improve it, however you see fit. (Some options: keyboard input, move on click, etc).
 
 ### Go crazy
 
