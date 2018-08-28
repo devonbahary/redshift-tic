@@ -51,7 +51,7 @@ Go for those that seem interesting or play to your strengths. If you consider yo
 
 The game doesn't really work, because we haven't built in victory or stalemate conditions.
 
-- [ ] Add a check and alert for victory.
+- [x] Add a check and alert for victory.
 - [ ] Add a check and alert for basic stalemate -- when the game hasn't been won and there are no more moves.
 
 ### Bug Fixes

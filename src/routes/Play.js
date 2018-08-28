@@ -15,6 +15,38 @@ export class Play extends React.Component {
     };
   }
 
+  checkForWin(row, column) {
+    const board = this.props.game.get('board').toArray().map(list => list.toArray());
+    const symbols = ['X', 'O'];
+    const currentPlayerSymbol = symbols[this.props.game.get('currentPlayerIndex')];
+
+    // check row
+    const hasOpponentInRow = board[row].some((cell, index) => cell !== currentPlayerSymbol && index != column);
+    if (!hasOpponentInRow) {
+      return true;
+    }
+
+    // check column
+    const hasOpponentInColumn = [ board[0][column], board[1][column], board[2][column] ].some((cell, index) => cell !== currentPlayerSymbol && index != row);;
+    if (!hasOpponentInColumn) {
+      return true;
+    }
+
+    // check diagonal1
+    const hasOpponentInDiagonal1 = [ board[0][0], board[1][1], board[2][2] ].some((cell, index) => cell !== currentPlayerSymbol && index != row && index != column);
+    if (!hasOpponentInDiagonal1) {
+      return true;
+    }
+
+    // check diagonal2
+    const hasOpponentInDiagonal2 = [ board[0][2], board[1][1], board[2][0] ].some((cell, index) => cell !== currentPlayerSymbol && index != row && index != column);
+    if (!hasOpponentInDiagonal2) {
+      return true;
+    }
+
+    return false;
+  }
+
   submitMove() {
     const { dispatch } = this.props;
     const { row, column } = this.state;
@@ -29,6 +61,12 @@ export class Play extends React.Component {
       }
 
       // TODO: Determine win or stalemate
+      if (this.checkForWin(row, column)) {
+        const players = this.props.game.get('players');
+        const playerName = players.get(this.props.game.get('currentPlayerIndex'));
+        console.log()
+        alert(`Player ${playerName} wins!`)
+      }
     } else {
       alert('You need to pick a row and column before you can move!');
     }

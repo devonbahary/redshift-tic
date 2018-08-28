@@ -24,7 +24,14 @@ const game = (state = init, action) => {
     }
 
     case 'RESET_GAME': {
-      return state.set('players', fromJS([]));
+      return state
+        .set('players', fromJS([]))
+        .set('board', fromJS([
+          [null, null, null],
+          [null, null, null],
+          [null, null, null]
+        ]))
+        .set('currentPlayerIndex', 0);
     }
     default: {
       return state;
