@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { func } from 'prop-types';
 
-import { resetGame } from 'redux/actions';
+import { resetGame } from '../../redux/actions';
 import './Header.css';
 
 const Header = (props) => {

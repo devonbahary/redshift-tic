@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import { map } from 'react-immutable-proptypes';
 import { func } from 'prop-types';
 
-import { move } from 'redux/actions';
-import CoreLayout from 'containers/CoreLayout';
+import { move } from '../redux/actions';
+import CoreLayout from '../containers/CoreLayout';
 
 export class Play extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      row: null,
-      column: null
+      row: '',
+      column: ''
     };
   }
 
@@ -19,7 +19,7 @@ export class Play extends React.Component {
     const { dispatch } = this.props;
     const { row, column } = this.state;
 
-    if (row && column) {
+    if (row !== '' && column !== '') {
       dispatch(move(row, column));
 
       // TODO: Determine win or stalemate
@@ -59,8 +59,9 @@ export class Play extends React.Component {
             Select a row:
             <select
               value={ this.state.row }
-              onChange={ (event) => { this.setState({ row: Number(event.target.value) }) } }
+              onChange={ (event) => { this.setState({ row: event.target.value }) } }
             >
+              <option value={ '' } />
               {
                 cellIndices.map(ind => (
                   <option value={ ind } key={ ind } >{ ind }</option>
@@ -75,6 +76,7 @@ export class Play extends React.Component {
               value={ this.state.column }
               onChange={ (event) => { this.setState({ column: event.target.value }) } }
             >
+              <option value={ '' } />
               {
                 cellIndices.map(ind => (
                   <option value={ ind } key={ ind } >{ ind }</option>

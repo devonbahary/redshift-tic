@@ -4,9 +4,9 @@ import { spy } from 'sinon';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { init as gameInit } from 'redux/reducers/game';
+import { init as gameInit } from '../../redux/reducers/game';
 
-import { Play } from 'routes/Play';
+import { Play } from '../../routes/Play';
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -36,8 +36,8 @@ describe('Play', () => {
       const component = shallow(<Play dispatch={ dispatch } game={ gameInit } />);
 
       expect(component.state()).toEqual({
-        row: null,
-        column: null
+        row: '',
+        column: ''
       });
 
       const input = component.find('input')
