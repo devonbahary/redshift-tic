@@ -64,7 +64,6 @@ export class Play extends React.Component {
       if (this.checkForWin(row, column)) {
         const players = this.props.game.get('players');
         const playerName = players.get(this.props.game.get('currentPlayerIndex'));
-        console.log()
         alert(`Player ${playerName} wins!`)
       }
     } else {

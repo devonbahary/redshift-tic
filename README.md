@@ -60,8 +60,8 @@ The game doesn't really work, because we haven't built in victory or stalemate c
 
 There are at least two bugs on the Play page.
 
-- [ ] Find them and fix them.
-- [ ] Add to the limited test suite to make sure that your changes fix the issues, and they don't happen again.
+- [x] Find them and fix them.
+- [x] Add to the limited test suite to make sure that your changes fix the issues, and they don't happen again.
 
 ### Bonus Basics
 
